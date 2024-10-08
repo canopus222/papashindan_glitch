@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papa Skill Check</title>
+    <!-- 外部CSSファイルをリンク -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ヘッダーを読み込むためのスクリプト -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ヘッダーを挿入する場所 -->
+    <div id="header-container"></div>
+
+    <main class="flex flex-col items-center min-h-screen">
+      <!-- コンテナ -->
+      <div class="container">
+        <!-- タイトル -->
+        <header class="my-8">
+          <h1 class="title">
+            <span>P</span>apa
+            <span>S</span>kill
+            <span>C</span>heck
+          </h1>
+          <!-- 説明文 -->
+          <p class="description">あなたの父親度を客観的にみてみましょう</p>
+        </header>
+
+        <!-- 画像 -->
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-SCR-8BkZzikqGK1UPAbEs2_qG9M39fBVpqQJWU10qtyFXRu4GwCEAfN6y7396VF9CuWxpcNVzGpEodgtqJpcpW0CEayRjiBirKCEhsGprQmz9KnmCws3PpSJd7WMEsw_PtgnIOhnlIA/s800/father_burasagari.png"
+          alt="父親のイメージ"
+          class="image"
+        />
+
+        <!-- ボタン -->
+        <div class="mt-6">
+          <a href="/diagnosis.html" class="button">診断を始める</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
