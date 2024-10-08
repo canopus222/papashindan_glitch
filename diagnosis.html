@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papa Skill Check - 診断</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- ヘッダーを読み込むためのスクリプト -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ヘッダーを挿入する場所 -->
+    <div id="header-container"></div>
+    
+    <main class="flex flex-col items-center min-h-screen">
+      <!-- コンテナ（背景の上に配置する） -->
+      <div class="container">
+        <form action="/posts" method="POST" id="diagnosis-form" onsubmit="return validateForm();">
+          <h3 class="font-bold mt-4">Q.1 子供と電車に乗りました。次の駅で降りる予定ですが子供が座りたいといっています。座らせますか</h3>
+          <label>
+            <input type="radio" name="question1" value="1" /> はい
+            <p>たとえ1駅でもわが子の喜ぶ顔が見れ、静かにしてくれるのなら。</p>
+          </label>
+          <label>
+            <input type="radio" name="question1" value="0" /> いいえ
+            <p>はっ？次でおりんだよ。1駅位すぐだぞ。</p>
+          </label>
+
+          <h3 class="font-bold mt-4">Q.2 子供にご飯を食べさせることになりました。しかし、食べ物で遊んでばかり。どうにかしますか</h3>
+          <label>
+            <input type="radio" name="question2" value="1" /> はい
+            <p>おいしそうに食べれば食べてくれる！わが子よパパに続け！</p>
+          </label>
+          <label>
+            <input type="radio" name="question2" value="0" /> いいえ
+            <p>ママでないと食べないんでしょそれならとりあえずおもちゃで遊んでくれ。昆虫太極拳でも見る？</p>
+          </label>
+
+          <h3 class="font-bold mt-4">Q.3 子供の寝かしつけの時、「ままがいい」とギャン泣きしています。それでも一緒に寝ますか</h3>
+          <label>
+            <input type="radio" name="question3" value="1" /> はい
+            <p>すぐに寝ないことは百も承知。絵本を読んだり、少し疲れるまで遊ばせてみる。パパが寝かしつけるぞ！</p>
+          </label>
+          <label>
+            <input type="radio" name="question3" value="0" /> いいえ
+            <p>ままー、おねがーい。ご飯は食べさせたんだからいいよねー。</p>
+          </label>
+
+          <h3 class="font-bold mt-4">Q.4 子供が遊び場で遊んでいます。一緒に遊びますか</h3>
+          <label>
+            <input type="radio" name="question4" value="1" /> はい
+            <p>ただ一緒に遊ぶのではなく、「見守る」！目を離さないぞ！！</p>
+          </label>
+          <label>
+            <input type="radio" name="question4" value="0" /> いいえ
+            <p>さーてと、スマホゲームでもしますか。おっ100連ガチャ忘れるとこだった。</p>
+          </label>
+
+          <h3 class="font-bold mt-4">Q.5 お嫁さんは1か月に1・2回は休日子供を連れ実家に帰ります。あなたもついていきますか</h3>
+          <label>
+            <input type="radio" name="question5" value="1" /> はい
+            <p>実家もいいけど、おれは父親になるんだ！ママはついてくるなというかもしれないが、実家にお邪魔して子育ての勉強をお義母さんから学ぶぞ！</p>
+          </label>
+          <label>
+            <input type="radio" name="question5" value="0" /> いいえ
+            <p>いえーい！しばらく見れてなかったサッカーの試合でもリアルタイムで見ますか。結局実家がいいんだろう。（軽くすねる）</p>
+          </label>
+
+          <!-- 診断ボタン -->
+          <div class="text-center mt-6">
+            <button type="submit" class="button">診断する</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- モーダル -->
+      <dialog id="warningModal" class="modal">
+        <div class="modal-box" style="background-color: #fffacd;">
+          <h3 class="text-lg font-bold">警告</h3>
+          <p class="py-4">すべての設問に答えてください。</p>
+          <div class="modal-action">
+            <button class="btn" onclick="document.getElementById('warningModal').close()">閉じる</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    
+  </body>
+</html>
+
+<script>
+  function validateForm() {
+    let yesCount = 0;
+
+    for (let i = 1; i <= 5; i++) {
+      const yesOption = document.querySelector(`input[name="question${i}"][value="1"]`);
+      const noOption = document.querySelector(`input[name="question${i}"][value="0"]`);
+
+      if (!yesOption.checked && !noOption.checked) {
+        document.getElementById('warningModal').showModal();
+        return false;
+      }
+
+      if (yesOption.checked) {
+        yesCount++;
+      }
+    }
+
+    // 診断結果ページへ遷移
+    window.location.href = `result.html?result=${yesCount}`;
+    return false; // フォーム送信を防ぐ
+  }
+</script>

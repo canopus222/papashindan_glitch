@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>診断結果</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="flex flex-col items-center min-h-screen">
+      <div class="container">
+        <h1 class="text-2xl font-bold mb-6">診断結果</h1>
+
+        <div class="result">
+          <h3 class="text-xl font-semibold mt-4">あなたは <span id="content"></span> です！</h3>
+          <img id="result-image" style="width: 300px; height: 300px; object-fit: cover;" class="mx-auto my-6" />
+          <p id="description" class="text-lg leading-relaxed"></p>
+
+          <!-- Twitterシェアボタン -->
+          <div class="mt-6 flex justify-center space-x-4">
+            <a href="#" id="twitter-share-button" class="button" target="_blank">Twitterでシェアする</a>
+            <a href="index.html" class="button">トップページに戻る</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="resultsData.js"></script>
+    <script>
+      // URLパラメータから結果を取得
+      const urlParams = new URLSearchParams(window.location.search);
+      const resultNumber = urlParams.get('result');
+
+      // 結果データを取得
+      const resultData = resultsData.find((item) => item.number === resultNumber);
+
+      if (resultData) {
+        // 診断結果の内容をページに表示
+        document.getElementById('content').textContent = resultData.content;
+        document.getElementById('result-image').src = resultData.image;
+        document.getElementById('description').textContent = resultData.description;
+
+        // Twitterのシェアリンクを生成
+        const tweetText = `あなたは「${resultData.content}」です！ #PapaSkillCheck`;
+        const tweetUrl = 'https://jagged-furtive-shear.glitch.me'; // シェアしたいURL
+        const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(tweetUrl)}`;
+
+        // シェアボタンにリンクを設定
+        document.getElementById('twitter-share-button').href = twitterShareUrl;
+      } else {
+        document.getElementById('content').textContent = '診断結果が見つかりませんでした。';
+      }
+    </script>
+  </body>
+</html>

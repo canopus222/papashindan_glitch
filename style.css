@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('https://cdn.glitch.global/acdfe30f-e98e-4661-b72e-b710b7879b96/0e847aeb-611b-42ce-8dd2-f9a004b66cef.PSC%20(1).png?v=1728353646693');
+  background-size: cover; /* 画像を画面全体にカバーする */
+  background-position: center; /* 画像を中央に配置する */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-attachment: fixed; /* ページをスクロールしても背景が固定される */
+}
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.title span {
+  font-size: 36px;
+}
+.description {
+  font-size: 18px;
+  margin-top: 16px;
+}
+.image {
+  width: 300px;
+  height: 300px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* 既存のスタイルに追加 */
+.navbar {
+  background-color: orange;
+  padding: 10px 0;
+  text-align: center; /* ヘッダーのテキストを中央に揃える */
+  position: fixed; /* ヘッダーをページの上部に固定 */
+  width: 100%; /* ヘッダーが画面幅全体をカバー */
+  top: 0; /* ページの最上部に配置 */
+  left: 0;
+  z-index: 1000; /* 他の要素の上に表示 */
+}
+
+.navbar a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* 中央揃え設定 */
+main {
+  padding-top: 60px; /* ヘッダーの高さ分、メインコンテンツを下に */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 画面全体に対する高さ */
+}
