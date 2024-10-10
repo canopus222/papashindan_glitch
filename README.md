@@ -41,5 +41,7 @@ https://papa-skill-check.glitch.me
 https://www.figma.com/design/2tycZuER5dtGDyDrEVrMqA/Papa-Skill-Check?node-id=0-1&node-type=canvas&t=9yezFmI5lKWRZg2K-0
 
 # 記事
-今回、背景作成にあたり使用したサービスについての記事
+- 今回、背景作成にあたり使用したサービスについての記事
 https://qiita.com/wa-chan222/items/b88989f6a924338fd85f
+- 作成した内容に冠する記事
+  https://qiita.com/wa-chan222/items/d488de376f9676ab586c
