@@ -1,48 +1,43 @@
-# Hello website!
+# サービスURL
+https://papa-skill-check.glitch.me
 
-This is a basic HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen ✨ immediately in the preview window. On the left you'll see the files that make up your site, including HTML, JavaScript, and CSS. You can upload assets like images or audio in `assets`. The rest is up to you and your imagination. 🦄
+# サービス概要
+- 5つの設問に「はい」「いいえ」で答えることで現段階での父親度を客観的にみてみるサービスです
+> [!WARNING]
+> 個人的見解を含みます。あくまでゲームですので寛大な心をもち結果を見てください。
 
-_Last updated: 28 Feb 2023_
+# このサービスへの思い・作りたい理由
+- ママサイトの記事や漫画を見ていると結構パートナーに不満等様々な思いを抱えて生活されている方が多いことを実感
+- 私の近しい人もどうやって相手に伝えるか、結構試行錯誤しているのを見て、うまく相手に伝える方法はないものかを考えました。
+- まずはこのサービスを利用し、客観的に、第三者からどう見られているのかパートナーが把握することで何かいい方向に変化すればいいなと思いこのサービスを作成しました。
 
-## What's in this project?
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
+# ターゲットユーザ
+- 父親としての自分を客観的に知りたい方
+- 家族や友人と診断結果をシェアして楽しみたい方
+- 私の夫はこうだろうな、と知り、診断結果をシェアすることでほかのママと交流をしたい方
 
-← `index.html`: This is the main web page for your site. The HTML defines the structure and content of the page using _elements_. You'll see references in the HTML to the JS and CSS files. Try clicking the image in the center of the page!
+# ユーザーの獲得方法
+- SNSでの情報発信
+- Qiita記事作成
+- RUNTEQスクール内での発信
 
-← `style.css`: CSS files add styling rules to your content. The CSS applies styles to the elements in your HTML page. The style rules also make the image move when you click it.
+# 機能一覧
+- 5つの質問に答える診断機能
+- 結果をTwitterでシェアする機能
+- 各父親タイプの詳細解説ページ
 
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript. The code in the JavaScript file runs when the page loads, and when the visitor clicks the button you can add using the code in the TODO.
+# 使用技術
+| カテゴリー     | 使用技術                                     | 
+| -------------- | -------------------------------------------- | 
+| フロントエンド | HTML<br>CSS<br>JavaScript                    | 
+| API            | Intent API                                   | 
+| 開発環境       | Glitch（ホスティングと開発プラットフォーム） | 
+| インフラ       | Glitch（サーバーを運営する環境）             | 
 
-Open each file and check out the comments (in gray) for more info.
+# 画面遷移図
+https://www.figma.com/design/2tycZuER5dtGDyDrEVrMqA/Papa-Skill-Check?node-id=0-1&node-type=canvas&t=9yezFmI5lKWRZg2K-0
 
-## Try this next 🏗️
-
-Take a look in `TODO.md` for next steps you can try out in your new site!
-
-___Want a minimal version of this project to build your own website? Check out [Blank Website](https://glitch.com/edit/#!/remix/glitch-blank-website)!___
-
-## Ready to share your site?
-
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
-
-```
-<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="Hello World!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
-<meta name="twitter:card" content="summary" />
-```
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
-
-## You built this with Glitch!
-
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+# 記事
+今回、背景作成にあたり使用したサービスについての記事
+https://qiita.com/wa-chan222/items/b88989f6a924338fd85f
